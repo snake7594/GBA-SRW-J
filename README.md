@@ -16,16 +16,16 @@ GBA 『슈퍼로봇대전 J』(Super Robot Taisen J, 2005)의 **게임 전반을
 ## 빠른 시작 — 패치 적용 (플레이어용)
 
 1. **합법적으로 소유한** 일본판 원본 ROM `Super Robot Taisen J (Japan).gba` (16MB) 를 준비합니다.
-2. 이 저장소의 **가장 최신** 패치 `Super Robot Taisen J (Korean)_20260625.xdelta` 를 내려받습니다.
+2. [**Releases**](https://github.com/snake7594/TRANS-SRWJ/releases/latest) 에서 최신 `.xdelta` 패치를 내려받습니다.
 3. [xdelta](https://github.com/jmacd/xdelta) 로 적용합니다(또는 xdelta UI 도구 사용):
 
    ```bash
-   xdelta -d -s "Super Robot Taisen J (Japan).gba" "Super Robot Taisen J (Korean)_20260625.xdelta" "srwj_korean.gba"
+   xdelta -d -s "Super Robot Taisen J (Japan).gba" "Super.Robot.Taisen.J.Korean._20260625.xdelta" "srwj_korean.gba"
    ```
 
 4. 생성된 `srwj_korean.gba` (한글 적용, 자동 확장으로 32MB) 를 mGBA·VBA 등 에뮬레이터나 플래시카트에서 실행합니다.
 
-> 날짜별 패치(`_20260615` … `_20260625`)는 작업 이력입니다. **최신 날짜본을 사용**하세요.
+> 배포용 `.xdelta` 패치는 저장소 트리가 아니라 **[Releases](https://github.com/snake7594/TRANS-SRWJ/releases)** 에 올라갑니다.
 
 ---
 
@@ -38,7 +38,7 @@ GBA 『슈퍼로봇대전 J』(Super Robot Taisen J, 2005)의 **게임 전반을
 | [`0. 시나리오/`](0.%20시나리오/) | 전 70챕터 **시나리오 대사** 삽입 도구 + 번역 매칭 엑셀(`srwj_matched_all_*.xlsx`) |
 | [`2. 전투대사패치/`](2.%20전투대사패치/) | **전투(배틀) 대사·합체기** 삽입 도구 + `battle_dialogue*.json` |
 | [`3. SJIS추출/`](3.%20SJIS추출/) | **메뉴·정신커맨드·아이템 등 시스템 텍스트** 추출·번역(`translations.json`)·빌드 |
-| 루트 `*.xdelta` · `!xdelta_e_SRWJ.bat` | 최종 통합 ROM에서 만든 **배포용 차분 패치**와 생성 스크립트 |
+| 루트 `!xdelta_e_SRWJ.bat` | 최종 통합 ROM에서 **배포용 차분 패치(xdelta)** 를 만드는 스크립트 (패치 자체는 [Releases](https://github.com/snake7594/TRANS-SRWJ/releases)) |
 
 각 폴더에는 자체 `README` 가 들어 있습니다.
 
@@ -109,7 +109,7 @@ JSON 기반으로 전투 대사를 삽입합니다. 합체기 블록(blk193)은 
 ### 루트 / 빌드 — 배포 패치 생성
 - `!xdelta_e_SRWJ.bat` — 통합 한글 ROM에서 `xdelta` 차분 패치를 생성:
   `xdelta -B 16777216 -e -9 -S djw -vfs "Super Robot Taisen J (Japan).gba" "srwj_korean_all.gba" "..._YYYYMMDD.xdelta"`
-- `Super Robot Taisen J (Korean)_YYYYMMDD.xdelta` — 날짜별 배포 패치(최신본 사용)
+- 생성된 `.xdelta` 패치는 저장소 트리가 아닌 **[Releases](https://github.com/snake7594/TRANS-SRWJ/releases)** 로 배포합니다(원본 ROM 미포함 차분).
 
 ---
 
