@@ -1,0 +1,4 @@
+이 폴더에 ROM 2개를 넣으세요:
+  out.gba  = 한글 폰트가 적용된 ROM (패치 대상, 필수)
+  jp.gba   = 일본어 원본 ROM (참고용, 선택)
+그 다음 상위 폴더에서  python build_patch.py  를 실행하세요.
