@@ -1,0 +1,54 @@
+name: 🐞 버그·오류 제보
+description: 게임이 멈추거나 화면이 깨지는 등 오작동을 알려주세요.
+title: "[버그] "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        SRWJ 한글패치 버그 제보 감사합니다. 아래 항목을 채워 주시면 빠르게 확인·수정할 수 있습니다.
+  - type: input
+    id: version
+    attributes:
+      label: 패치 버전
+      placeholder: "예: v1.1 (릴리즈 페이지에서 확인)"
+    validations:
+      required: true
+  - type: dropdown
+    id: emulator
+    attributes:
+      label: 에뮬레이터 / 기기
+      options:
+        - VBA (PC)
+        - mGBA (PC)
+        - My Boy (안드로이드)
+        - Pizza Boy (안드로이드)
+        - RetroArch
+        - 실기 / 플래시카트
+        - 기타
+    validations:
+      required: true
+  - type: input
+    id: location
+    attributes:
+      label: 발생 위치
+      description: 몇 화 · 어느 화면에서 발생했나요?
+      placeholder: "예: 12화 전투 / 합체기 연출 / OO 메뉴 / OO 대사"
+  - type: textarea
+    id: symptom
+    attributes:
+      label: 증상
+      description: 무슨 일이 일어났나요?
+      placeholder: "예: 조건 화면 직전에 멈춤 / 화자가 '도몬'으로 나옴 / 글자가 깨짐 / 세이브 로드 실패"
+    validations:
+      required: true
+  - type: textarea
+    id: repro
+    attributes:
+      label: 재현 방법
+      description: 어떤 순서로 하면 다시 나타나나요?
+  - type: textarea
+    id: extra
+    attributes:
+      label: 스크린샷 · 세이브 · 기타
+      description: 스크린샷이나 세이브 파일(.sav)을 첨부해 주시면 큰 도움이 됩니다. (원본/패치 ROM 파일은 저작권상 첨부 금지)

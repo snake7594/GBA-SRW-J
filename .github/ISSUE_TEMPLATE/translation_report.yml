@@ -1,0 +1,39 @@
+name: ✏️ 오타·오역 제보
+description: 대사·메뉴의 오타나 어색한 번역을 알려주세요.
+title: "[오타/오역] "
+labels: ["translation"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        번역 개선 제보 감사합니다. 어느 부분이 어떻게 어색한지 적어 주시면 다음 버전에 반영합니다.
+  - type: input
+    id: version
+    attributes:
+      label: 패치 버전
+      placeholder: "예: v1.1"
+  - type: input
+    id: location
+    attributes:
+      label: 위치
+      description: 어느 화 · 어느 화면인지
+      placeholder: "예: 12화 전투 대사 / 정신 커맨드 메뉴 / OO 기체명"
+    validations:
+      required: true
+  - type: textarea
+    id: current
+    attributes:
+      label: 현재 (잘못된) 텍스트
+      placeholder: 게임에 실제로 나온 문구를 그대로 적어 주세요.
+    validations:
+      required: true
+  - type: textarea
+    id: suggestion
+    attributes:
+      label: 제안 (고쳤으면 하는) 텍스트
+      description: 원문 뜻이나 자연스러운 표현을 제안해 주시면 좋습니다.
+  - type: textarea
+    id: screenshot
+    attributes:
+      label: 스크린샷
+      description: 해당 장면 스크린샷을 첨부해 주시면 위치 파악이 쉽습니다.
